@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bidding Page Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      // ❌ FIX: remove const before Scaffold
       home: Scaffold(
         appBar: AppBar(title: const Text('Bidding Page')),
         body: const Center(child: MaximumBid()),
