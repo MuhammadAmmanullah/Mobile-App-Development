@@ -1,0 +1,51 @@
+<?php
+$con=mysql_connect('localhost','root','','se52');
+if(!$con){
+    echo'connection mn koi maslha hy...';
+}
+if(isset($_POST['btn'])){
+    $a=$_POST['sn'];
+    $b=$_POST['fn'];
+    $qu="insert into bebo1 values('$a','$b')";
+    $result=mysql_query($con,$qu);
+    if($result){
+        echo'data save ho gya';
+    }
+    else{
+        echo'koi error hy';
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+    <label for="">Student Name</label>
+    <input type="text" name="sn" id="">
+    <label for="">Father Name</label>
+    <input type="text" name="fn" id="">
+    <button type="submit" name="btn">Save</button>
+    </form>
+    <table>
+    <tr>
+    <th>Student Name</th>
+    <th>Father Name</th>
+    </tr>
+<?php
+$qd="select * from bebo1";
+$re=mysql_query($con,$qd);
+while($data=mysql_fetch_assoc($re)){
+    echo '<tr>
+    <td> '.$data['sname'].'</td>
+    <td> '.$data['fname'].'</td>
+    </tr>';
+}
+?>
+</table>
+</body>
+</html>

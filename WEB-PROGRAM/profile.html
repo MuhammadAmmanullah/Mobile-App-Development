@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | 30-Sep-2025</title>
+    <style>
+        body { background: #f4f6fb; font-family: 'Segoe UI', Arial, sans-serif; }
+        .container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); padding: 32px; }
+        .nav { display: flex; gap: 32px; margin-bottom: 32px; }
+        .nav a { color: #4f8cff; text-decoration: none; font-weight: 500; font-size: 18px; }
+        .nav a:hover { text-decoration: underline; }
+        h1 { color: #2563eb; margin-bottom: 24px; }
+        .profile-info { margin-top: 24px; }
+        .profile-info label { font-weight: 500; color: #222; }
+        .profile-info div { margin-bottom: 16px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="courses.html">Courses</a>
+            <a href="settings.html">Settings</a>
+            <a href="30-SEP.HTML" style="margin-left:auto;">Logout</a>
+        </div>
+        <h1>Your Profile - 30 Sep</h1>
+        <div class="profile-info">
+            <div><label>Username:</label> <span id="profile-username"></span></div>
+            <div><label>Email:</label> <span>ammanullah@example.com</span></div>
+            <div><label>Member Since:</label> <span>2023</span></div>
+            <div><label>Completed Courses:</label> <span>JavaScript, HTML, CSS</span></div>
+        </div>
+    </div>
+    <script>
+        // Show saved username from localStorage
+        document.getElementById('profile-username').textContent = localStorage.getItem('appUsername') || 'Unknown';
+    </script>
+</body>
+</html>

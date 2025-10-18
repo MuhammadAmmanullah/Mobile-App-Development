@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | 30-Sep-2025</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #4f8cff 0%, #6ee7b7 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            padding: 32px;
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 32px;
+            color: #4f8cff;
+        }
+        .input-block {
+            margin-bottom: 24px;
+        }
+        .input-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #222;
+            font-weight: 500;
+        }
+        .input-row input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .login-btn {
+            width: 100%;
+            background: #4f8cff;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: background 0.2s;
+        }
+        .login-btn:hover {
+            background: #2563eb;
+        }
+        .message {
+            margin-top: 18px;
+            text-align: center;
+            color: #d32f2f;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login - 30 Sep</h2>
+        <form id="login-form" onsubmit="return handleLogin(event)">
+            <div class="input-block">
+                <label class="input-label" for="username">Username</label>
+                <div class="input-row">
+                    <input type="text" id="username" required autocomplete="username">
+                </div>
+            </div>
+            <div class="input-block">
+                <label class="input-label" for="password">Password</label>
+                <div class="input-row">
+                    <input type="password" id="password" required autocomplete="current-password">
+                </div>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <div id="message" class="message"></div>
+    </div>
+    <script>
+        // Check if credentials exist in localStorage
+        function getSavedCredentials() {
+            return {
+                username: localStorage.getItem('appUsername'),
+                password: localStorage.getItem('appPassword')
+            };
+        }
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const messageDiv = document.getElementById('message');
+            const saved = getSavedCredentials();
+            if (!username || !password) {
+                messageDiv.textContent = 'Please enter both username and password.';
+                return false;
+            }
+            if (!saved.username || !saved.password) {
+                // First time: save credentials
+                localStorage.setItem('appUsername', username);
+                localStorage.setItem('appPassword', password);
+                messageDiv.style.color = '#388e3c';
+                messageDiv.textContent = 'Account created! Logging in...';
+                setTimeout(() => window.location.href = 'dashboard.html', 1200);
+            } else if (username === saved.username && password === saved.password) {
+                messageDiv.style.color = '#388e3c';
+                messageDiv.textContent = 'Login successful!';
+                setTimeout(() => window.location.href = 'dashboard.html', 800);
+            } else {
+                messageDiv.style.color = '#d32f2f';
+                messageDiv.textContent = 'Incorrect username or password.';
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moellim Dashboard</title>
+    <link rel="stylesheet" href="/WEB-PROGRAM/style.css">
+    <style>
+        body {
+            background: #f4f6fb;
+        }
+        .dashboard-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            padding: 2rem;
+        }
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .courses {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .course {
+            background: #f4f6fb;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 1.5rem 2rem;
+            flex: 1 1 250px;
+            min-width: 220px;
+            text-align: center;
+        }
+        .course h3 {
+            color: #4f8cff;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Welcome to Moellim Dashboard</h1>
+            <p>Select a course or use the integration feature below.</p>
+        </div>
+        <div class="courses">
+            <div class="course">
+                <h3>Mathematics</h3>
+                <p>Algebra, Calculus, Geometry, and more.</p>
+            </div>
+            <div class="course">
+                <h3>Computer Science</h3>
+                <p>Programming, Data Structures, Algorithms.</p>
+            </div>
+            <div class="course">
+                <h3>Physics</h3>
+                <p>Mechanics, Thermodynamics, Electromagnetism.</p>
+            </div>
+            <div class="course">
+                <h3>English</h3>
+                <p>Grammar, Literature, Writing Skills.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

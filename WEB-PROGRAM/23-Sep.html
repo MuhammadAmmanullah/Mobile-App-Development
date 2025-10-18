@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Lecture</h1>
+    <!-- Simple Username Form (Unrelated to login, for demonstration) -->
+    <form action="">
+        <label for="name">User name:</label>
+        <input type="text" id="name" name="name">
+    </form>
+    <!-- Button with JavaScript event -->
+    <button type="button" onclick="clk()">Click Me</button>
+    
+    <!-- Client-side Login Section (IMPORTANT: Handles user authentication) -->
+    <div id="login-section" style="margin-top:32px;max-width:350px;padding:24px;border-radius:10px;background:#f4f6fb;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <h2>Login</h2>
+        <form id="client-login-form" onsubmit="return clientLogin(event)">
+            <label for="login-username">Username:</label>
+            <input type="text" id="login-username" name="login-username" required style="width:320px;margin-bottom:16px;">
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="login-password" required style="width:320px;margin-bottom:16px;">
+            <button type="submit" style="width:320px;background:#acafaa;color:#b7eb9f;padding:12px;border:none;border-radius:6px;">Login</button>
+        </form>
+        <div id="login-message" style="margin-top:16px;color:#379777;"></div>
+    </div>
+    
+    <!-- Questions Section (IMPORTANT: Shown after successful login) -->
+    <div id="questions-section" style="display:none;margin-top:32px;max-width:500px;padding:24px;border-radius:10px;background:#fffbe7;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+        <h2>Welcome! Please answer the following questions:</h2>
+        <form id="questions-form">
+            <div style="margin-bottom:16px;">
+                <label>1. What is your favorite programming language?</label><br>
+                <input type="text" name="q1" style="width:320px;">
+            </div>
+            <div style="margin-bottom:16px;">
+                <label>2. How many years have you been coding?</label><br>
+                <input type="number" name="q2" style="width:320px;">
+            </div>
+            <div style="margin-bottom:16px;">
+                <label>3. What do you want to learn next?</label><br>
+                <input type="text" name="q3" style="width:320px;">
+            </div>
+            <button type="submit" style="width:320px;background:#4f8cff;color:#fff;padding:12px;border:none;border-radius:6px;">Submit Answers</button>
+        </form>
+        <div id="questions-message" style="margin-top:16px;color:#388e3c;"></div>
+    </div>
+    
+    <!-- All scripts at the end for best practice -->
+    <script>
+    // IMPORTANT: Button click event for demonstration
+    function clk() {
+        let x = "Muhammad Ammanullah";
+        alert(x + " Touch Me..");
+    }
+    // IMPORTANT: JavaScript variable type checking (for learning)
+    let x = 16;
+    let y = 'x class';
+    console.log(typeof(y));
+    console.log(typeof(x));
+
+    // IMPORTANT: Handles login logic and shows questions after login
+    function clientLogin(event) {
+        event.preventDefault();
+        const username = document.getElementById('login-username').value.trim();
+        const password = document.getElementById('login-password').value.trim();
+        const messageDiv = document.getElementById('login-message');
+        if(username === '' || password === '') {
+            messageDiv.textContent = 'Please enter both username and password.';
+            return false;
+        }
+        // Accept any non-empty username and password
+        messageDiv.style.color = '#388e3c';
+        messageDiv.textContent = 'Login successful!';
+        setTimeout(function() {
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('questions-section').style.display = 'block';
+        }, 800);
+        return false;
+    }
+    // IMPORTANT: Handles question form submission
+    document.getElementById('questions-form')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('questions-message').textContent = 'Thank you for your answers!';
+    });
+    </script>
+</body>
+</html>

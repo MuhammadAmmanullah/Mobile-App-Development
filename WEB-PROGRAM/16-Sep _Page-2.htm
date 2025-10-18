@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moellim Login</title>
+    <link rel="stylesheet" href="/WEB-PROGRAM/style.css">
+    <style>
+        body {
+            background: linear-gradient(120deg, #4f8cff 0%, #6ee7b7 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            background: #fff;
+            padding: 10px 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+        }
+        .logo-bg {
+            background: #e0e0e0;
+            border-radius: 12px 12px 0 0;
+            padding: 10px 0 10px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .logo-divider {
+            width: 80%;
+            border: none;
+            border-top: 2px solid #bbb;
+            margin: 10px 0 0 0;
+        }
+        .login-logo {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            margin-bottom: 0;
+        }
+        .input-block {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .input-block label {
+            display: block;
+            margin-bottom: 10px;
+            color: #4f8cff;
+            font-weight: 500;
+        }
+        .input-block input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 10px;
+        }
+        .login-container button {
+            width: 100%;
+            background: #4f8cff;
+            color: #fff;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .login-container button:hover {
+            background: #2563eb;
+        }
+        .login-container .footer {
+            margin-top: 10px;
+            font-size: 10px;
+            color: #888;
+        }
+        .input-row {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-labels {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .forgot-bottom {
+            text-align: left;
+            margin-top: 10px;
+        }
+        .forgot-link {
+            color: #888;
+            font-size: 10px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .forgot-link:hover {
+            color: #4f8cff;
+            text-decoration: underline;
+        }
+        .remember-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .remember-label {
+            display: flex;
+            align-items: center;
+            font-size: 10px;
+            color: #4f8cff;
+        }
+    </style>
+    <script>
+        function showPasswordField() {
+            var username = document.getElementById('username').value.trim();
+            var passwordBlock = document.getElementById('password-block');
+            if(username !== "") {
+                passwordBlock.style.display = 'block';
+                document.getElementById('password').focus();
+            } else {
+                passwordBlock.style.display = 'none';
+            }
+        }
+        function handleUsernameKey(e) {
+            if(e.key === 'Enter') {
+                showPasswordField();
+            }
+        }
+        window.onload = function() {
+            document.getElementById('password-block').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo-bg">
+            <img src="/WEB-PROGRAM/Riphah Logo ..jpg" alt="Riphah Logo" class="login-logo">
+            <hr class="logo-divider">
+        </div>
+        <form onsubmit="window.location.href='moellim-dashboard.htm'; return false;">
+            <div class="input-block input-row">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="input-block">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="remember-row">
+                <label class="remember-label">
+                    <input type="checkbox" id="remember-username"> Remember username
+                </label>
+            </div>
+            <button type="submit">Login</button>
+            <div class="forgot-bottom">
+                <a href="#" class="forgot-link">Forgot your username or password?</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

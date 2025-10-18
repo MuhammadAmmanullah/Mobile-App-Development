@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | 30-Sep-2025</title>
+    <style>
+        body { background: #f4f6fb; font-family: 'Segoe UI', Arial, sans-serif; }
+        .container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); padding: 32px; }
+        .nav { display: flex; gap: 32px; margin-bottom: 32px; }
+        .nav a { color: #4f8cff; text-decoration: none; font-weight: 500; font-size: 18px; }
+        .nav a:hover { text-decoration: underline; }
+        h1 { color: #2563eb; margin-bottom: 24px; }
+        .settings-list { margin-top: 24px; }
+        .settings-list label { font-weight: 500; color: #222; }
+        .settings-list div { margin-bottom: 16px; }
+        .settings-list input[type="text"], .settings-list input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .settings-list button {
+            background: #4f8cff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background 0.2s;
+        }
+        .settings-list button:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="courses.html">Courses</a>
+            <a href="settings.html">Settings</a>
+            <a href="30-SEP.HTML" style="margin-left:auto;">Logout</a>
+        </div>
+        <h1>Settings - 30 Sep</h1>
+        <div class="settings-list">
+            <form onsubmit="return updateSettings(event)">
+                <div>
+                    <label for="new-username">Change Username</label>
+                    <input type="text" id="new-username" placeholder="New Username">
+                </div>
+                <div>
+                    <label for="new-password">Change Password</label>
+                    <input type="password" id="new-password" placeholder="New Password">
+                </div>
+                <button type="submit">Update</button>
+            </form>
+            <div id="settings-message" style="margin-top:12px;color:#388e3c;"></div>
+        </div>
+    </div>
+    <script>
+        function updateSettings(event) {
+            event.preventDefault();
+            const newUsername = document.getElementById('new-username').value.trim();
+            const newPassword = document.getElementById('new-password').value.trim();
+            if(newUsername) localStorage.setItem('appUsername', newUsername);
+            if(newPassword) localStorage.setItem('appPassword', newPassword);
+            document.getElementById('settings-message').textContent = 'Settings updated!';
+            return false;
+        }
+    </script>
+</body>
+</html>

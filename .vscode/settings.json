@@ -1,0 +1,9 @@
+{
+    "code-runner.runInTerminal": true,
+    "files.autoSave": "onWindowChange",
+    "files.autoSaveWorkspaceFilesOnly": true,
+    "files.autoSaveWhenNoErrors": false,
+    "files.associations": {
+        "iostream": "cpp"
+    }
+}
