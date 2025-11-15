@@ -11,14 +11,14 @@ void main() {
     ' and my hobby is $hobby',
   );
 
-  const int age = 21;
+  const int age = 20;
   print(
     'My name is $name,'
     ' and my hobby is $hobby'
     ' and my age is $age',
   );
 
-  String multilineAddress = '''House no 15, Street not 19A, AwanTown, RWP ''';
+  String multilineAddress = '''Allama Iqbal Colony,RWP ''';
   print(multilineAddress);
 
   bool alive = true;
@@ -31,7 +31,7 @@ void main() {
     print('Fruit names: $fruit');
   }
 
-  Map names = {'id1': 'Haroon', 'id2': 'Pasha', 'id3': 'Abrar'};
+  Map names = {'id1': 'Waliullah', 'id2': 'Habibullah', 'id3': 'Moiz Khan'};
   print('Get filter with id3: ${names['id3']}');
 
   Runes myEmoji = Runes('\u{1f607}');
@@ -48,8 +48,8 @@ void main() {
   // ====== CLASS Example ======
 
   // Create object of class
-  Student s1 = Student("Ali", 20);
-  Student s2 = Student("Sara", 22);
+  Student s1 = Student("Zaki Rehman", 14);
+  Student s2 = Student("Iqra Dildar", 20);
 
   s1.displayInfo();
   s2.displayInfo();
