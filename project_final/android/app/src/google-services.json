@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "869205506950",
+    "project_id": "customization-app-93f06",
+    "storage_bucket": "customization-app-93f06.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869205506950:android:0c63e2d0d01a108661ca07",
+        "android_client_info": {
+          "package_name": "Ammanullah.modification.App"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW5B_lsph0cPjx7nstW2de-HPqVjmuYO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
